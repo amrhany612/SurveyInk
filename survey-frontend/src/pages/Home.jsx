@@ -22,6 +22,7 @@ import wordBg from '../assets/brand asset.svg';
 import dollarImage from '../assets/DollarImage.png'
 import empoweringBgImage from '../assets/B.G.svg'
 import empoweringImage from '../assets/empoweringHome.png';
+import "./css/Home.css"
 function Home() {
   const { t, i18n } = useTranslation();
   const direction = i18n.language === 'ar' ? 'rtl' : 'ltr';
@@ -812,7 +813,10 @@ function Home() {
       />
     </div> */}
   </div>
+  <div className="join-section">
+
   <button
+      className="join-btn"
       style={{
         backgroundColor: '#F19303',
         color: '#FEFEFF',
@@ -837,6 +841,8 @@ function Home() {
     >
       JOIN US
     </button>
+    </div>
+
 </section>
 
 
@@ -1113,4 +1119,5 @@ const cardJoinTextStyle = {
   
 
 };
+
 export default Home;

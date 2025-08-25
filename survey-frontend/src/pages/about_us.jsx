@@ -22,6 +22,7 @@ import backgroundImage from '../assets/background.svg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
+import './css/about.css'
 
 function AboutUs() {
   const { t } = useTranslation();
@@ -32,7 +33,7 @@ function AboutUs() {
   }, []);
 
   return (
-    <main>
+    <main className="about-page">
       <section
         data-aos="fade-down"
         style={{

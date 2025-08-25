@@ -1,0 +1,138 @@
+/* Responsive Fixes for About Us Page */
+
+/* Mobile - screens under 768px */
+@media (max-width: 768px) {
+  .about-page section {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+  }
+
+  /* Hero section title */
+  .about-page h1 {
+    font-size: 28px !important;
+    text-align: center !important;
+  }
+
+  /* Empowering Section cards */
+  .about-page section div[style*="display: flex"] {
+    flex-direction: column !important;
+    margin: 0 auto !important;
+  }
+  .about-page img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .about-page h2 {
+    font-size: 22px !important;
+  }
+
+  /* Our Mission split layout → stack vertically */
+  .about-page section:nth-child(3) {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  .about-page section:nth-child(3) > div {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Cards (What We Offer + Why Join) → one per row */
+  .about-page section:nth-child(4) div,
+  .about-page section:nth-child(5) div {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .about-page section:nth-child(4) .card,
+  .about-page section:nth-child(5) .card {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Final CTA */
+  .about-page section:last-child h2 {
+    font-size: 20px !important;
+    line-height: 28px !important;
+  }
+  .about-page section:last-child button {
+    width: auto !important;
+    font-size: 14px !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* Tablet screens (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-page section {
+    width: 100% !important;
+  }
+
+  .about-page h1 {
+    font-size: 36px !important;
+  }
+
+  .about-page section:nth-child(2) > div {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .about-page section:nth-child(3) {
+    flex-direction: column !important;
+  }
+  .about-page section:nth-child(3) > div {
+    width: 90% !important;
+  }
+
+  .about-page section:nth-child(4) div,
+  .about-page section:nth-child(5) div {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+}
+@media (min-width: 1200px) {
+  .about-page section {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+
+  .about-page h1 {
+    font-size: 48px !important;
+  }
+
+  .about-page h2 {
+    font-size: 28px !important;
+  }
+
+  .about-page section:nth-child(4) .card,
+  .about-page section:nth-child(5) .card {
+    max-width: 45% !important;
+  }
+}
+
+/* Extra large screens (above 1600px e.g. 2K/4K) */
+@media (min-width: 1600px) {
+  .about-page section {
+    max-width: 1400px !important;
+  }
+
+  .about-page h1 {
+    font-size: 56px !important;
+  }
+
+  .about-page h2 {
+    font-size: 32px !important;
+  }
+
+  .about-page p {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+  }
+
+  /* Offer & Why Join cards in grid */
+  .about-page section:nth-child(4) div,
+  .about-page section:nth-child(5) div {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px !important;
+  }
+}

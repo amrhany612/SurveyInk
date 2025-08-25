@@ -1,0 +1,104 @@
+/* ===========================
+   Responsive Fixes for Home Page
+   =========================== */
+
+/* للأجهزة الصغيرة - موبايل */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .home-page section:first-child p {
+    font-size: 16px !important;
+    text-align: center !important;
+  }
+  .home-page section:first-child p:nth-child(2) {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    text-align: center !important;
+  }
+  .home-page section:first-child a {
+    width: auto !important;
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Features Section */
+  .home-page section:nth-child(2) h2 {
+    font-size: 22px !important;
+  }
+  .home-page section:nth-child(2) > div {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .home-page section:nth-child(2) div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Services Section */
+  .home-page section:nth-child(3) div[ref] {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  .home-page section:nth-child(3) div[ref] > div {
+    min-width: 100% !important;
+    height: auto !important;
+  }
+  .home-page section:nth-child(3) img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Supported Currencies Section */
+  .home-page section:nth-child(4) > div {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  .home-page section:nth-child(4) h2 {
+    font-size: 24px !important;
+    text-align: center !important;
+  }
+  .home-page section:nth-child(4) button {
+    font-size: 14px !important;
+    padding: 6px 12px !important;
+  }
+
+  /* Empowering Section */
+  .home-page section:nth-child(5) > div {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  .home-page section:nth-child(5) img {
+    display: none !important; /* نخفي صورة الـ Empowering على الموبايل لو كبيرة */
+  }
+  .home-page section:nth-child(5) p {
+    font-size: 20px !important;
+    line-height: 28px !important;
+  }
+  .join-section {
+    text-align: center !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* للأجهزة المتوسطة - تابلت */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-page section:first-child p:nth-child(2) {
+    font-size: 40px !important;
+    line-height: 48px !important;
+  }
+  .home-page section:nth-child(2) div[style*="grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 60px !important;
+    width: 100% !important;
+  }
+  .home-page section:nth-child(3) div[ref] > div {
+    min-width: 300px !important;
+  }
+  .home-page section:nth-child(4) > div {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+}

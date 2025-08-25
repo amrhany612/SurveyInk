@@ -4,7 +4,7 @@ import bgImage from '../../assets/TermsBackground.png';
 import bg from '../../assets/B.G.svg';
 import TermAndPrivacyImage from '../../assets/Rectangle.png';
 import PrivacyImage from '../../assets/privacy_image.png';
-
+import '../css/Privacy.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -129,7 +129,7 @@ function PrivacyAndPoliciy() {
   ];
 
   return (
-    <main>
+    <main className="privacy-page">
       {/* Header Section */}
       <section
         data-aos="fade-down"

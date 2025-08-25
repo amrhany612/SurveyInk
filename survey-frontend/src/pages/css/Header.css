@@ -1,0 +1,72 @@
+/* ===========================
+   Header Responsive Styling
+   =========================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+  justify-content: space-between;
+  background: #ffffff;
+  position: relative;
+  z-index: 100;
+}
+
+/* Nav links desktop */
+.header .nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+/* Hide mobile menu button on desktop */
+.header .mobile-menu-btn {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 15px;
+  }
+
+  /* Hide center nav on mobile */
+  .header .nav-links {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .header .mobile-menu-btn {
+    display: block !important;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* Mobile dropdown */
+  .header .mobile-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .header .mobile-menu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header .nav-links {
+    gap: 20px;
+  }
+}

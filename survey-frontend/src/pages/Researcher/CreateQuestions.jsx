@@ -136,7 +136,7 @@ const CreateQuestions = () => {
     try {
       const token = localStorage.getItem('access');
       await axios.post(
-        `http://127.0.0.1:8000/surveys/${surveyId}/questions/bulk_create`,
+        `https://survey-ink.com/surveys/${surveyId}/questions/bulk_create`,
         payload,
         {
           headers: {

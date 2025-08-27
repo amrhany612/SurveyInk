@@ -11,7 +11,7 @@ const SurveySubmissions = () => {
   const fetchSubmissions = async () => {
     try {
       const token = localStorage.getItem('access');
-      const res = await fetch(`http://127.0.0.1:8000/survey/${id}/submissions/`, {
+      const res = await fetch(`https://survey-ink.com/survey/${id}/submissions/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -25,7 +25,7 @@ const SurveySubmissions = () => {
   const handleAction = async (submissionId, action) => {
     try {
       const token = localStorage.getItem('access');
-      const url = `http://127.0.0.1:8000/submission/${submissionId}/${action}/`;
+      const url = `https://survey-ink.com/submission/${submissionId}/${action}/`;
       await fetch(url, {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },

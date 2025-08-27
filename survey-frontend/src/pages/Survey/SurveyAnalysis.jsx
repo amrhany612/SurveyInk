@@ -86,7 +86,7 @@ function SurveyAnalysis({ isRTL }) {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://127.0.0.1:8000/logout/', {
+      const response = await fetch('https://survey-ink.com/logout/', {
         method: 'POST',
         credentials: 'include',
       });

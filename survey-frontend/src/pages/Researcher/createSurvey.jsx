@@ -44,7 +44,7 @@ const CreateSurvey = () => {
   useEffect(() => {
     const fetchUniversities = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/universities/');
+        const res = await fetch('https://survey-ink.com/api/universities/');
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data)) {
@@ -86,7 +86,7 @@ const CreateSurvey = () => {
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/create-survey/', {
+      const response = await fetch('https://survey-ink.com/create-survey/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

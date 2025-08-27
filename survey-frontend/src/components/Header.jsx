@@ -22,7 +22,7 @@ function Header() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("access");
-      const response = await fetch("http://127.0.0.1:8000/api/logout/", {
+      const response = await fetch("https://survey-ink.com/api/logout/", {
         method: "POST",
         credentials: "include",
         headers: {

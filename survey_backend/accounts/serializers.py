@@ -89,30 +89,32 @@ class UserRegistrationSerializer(serializers.Serializer):
         token = default_token_generator.make_token(user)
         uid = user.pk
 
-        frontend_url = "http://localhost:3000"  # Your React app URL
+        frontend_url = "https://survey-ink.com"  # Your React app URL
         verification_link = f"{frontend_url}/verify-email?uid={uid}&token={token}"
-        logo_url = "http://localhost:8000/static/logo/logo.png"  # your actual logo URL
+        
 
         # Render HTML email
         html_message = render_to_string('emails/verify_email.html', {
             'user': user,
             'verification_link': verification_link,
-            'logo_url': logo_url  # Change if needed
+            
         })
-
-        send_mail(
-            subject="Verify your email",
-            message='',
-            from_email=None,
-            recipient_list=[user.email],
-            html_message=html_message
-        )
+        print("Hany")
+        #send_mail(
+          #subject="Verify your email",
+          #message="Please verify your email.",   # plain text fallback
+          #from_email=settings.DEFAULT_FROM_EMAIL,
+          #recipient_list=[user.email],
+         # html_message=html_message
+        #)
+        print("Hany2")
         EmailLog.objects.create(
             recipient=user.email,
             subject="Verification EMail",
             message="New User Added To Your Website",
             status='sent'
         )
+        print("Hany3")
         # Create profile
         for field in ['First_name', 'Last_name', 'Email']:
             validated_data.pop(field, None)

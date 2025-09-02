@@ -226,20 +226,22 @@ class LoginView(APIView):
 
 
 
-
+@csrf_exempt
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def signup_view(request, role):  # accept `role` from URL
-    # Inject role into the request data
     request_data = request.data.copy()
     request_data['role'] = role
     serializer = UserRegistrationSerializer(data=request_data, context={'request': request})
-    if serializer.is_valid():
-        serializer.save()
-        return Response({"message": "Registered. Check your email to verify your account."}, status=201)
-    print("Validation Errors:", serializer.errors)
-
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    try:
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response({"message": "Registered. Check your email to verify your account."}, status=201)
+    except Exception as e:
+        import traceback
+        print("❌ Signup Exception:", str(e))
+        traceback.print_exc()
+        return Response({"error": str(e)}, status=500)
 @api_view(['GET'])
 def verify_email(request, uid, token):
     try:

@@ -34,7 +34,7 @@ function AllSurveys({ isRTL }) {
   const fetchSurveys = async () => {
     try {
       const token = localStorage.getItem('access');
-      const response = await axios.get('http://localhost:8000/all-surveys/', {
+      const response = await axios.get('https://survey-ink.com/all-surveys/', {
         params: {
           page: currentPage,
           search: searchTerm,

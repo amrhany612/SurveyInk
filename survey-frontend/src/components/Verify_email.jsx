@@ -10,7 +10,7 @@ const VerifyEmail = () => {
     const token = searchParams.get("token");
 
     if (uid && token) {
-      fetch(`http://localhost:8000/api/verify-email/${uid}/${token}/`)
+      fetch(`https://survey-ink.com/api/verify-email/${uid}/${token}/`)
         .then(response => {
           if (!response.ok) throw new Error("Verification failed");
           return response.json();

@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
-# SITE_URL = 'http://localhost:8000'  # or your real domain, e.g. 'https://mywebsite.com'
+# SITE_URL = 'https://survey-ink.com'  # or your real domain, e.g. 'https://mywebsite.com'
 SITE_URL = os.environ.get("SITE_URL", "https://yourdomain.com")
 
 

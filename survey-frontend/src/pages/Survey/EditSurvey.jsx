@@ -36,7 +36,7 @@ const EditSurvey = () => {
       return;
     }
 
-    axios.get(`http://localhost:8000/researcher/surveys/${id}/`, {
+    axios.get(`https://survey-ink.com/researcher/surveys/${id}/`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
@@ -55,7 +55,7 @@ const EditSurvey = () => {
         toast.error(language === 'ar' ? 'فشل تحميل الاستبيان' : 'Failed to load survey');
       });
 
-    axios.get('http://localhost:8000/api/universities/')
+    axios.get('https://survey-ink.com/api/universities/')
       .then((response) => setUniversities(response.data))
       .catch(() => {
         toast.error(language === 'ar' ? 'فشل تحميل الجامعات' : 'Failed to load universities');
@@ -67,7 +67,7 @@ const EditSurvey = () => {
     const token = localStorage.getItem('access');
 
     try {
-      await axios.put(`http://localhost:8000/researcher/surveys/${id}/`, {
+      await axios.put(`https://survey-ink.com/researcher/surveys/${id}/`, {
         title: name,
         description,
         duration_days: durationDays,

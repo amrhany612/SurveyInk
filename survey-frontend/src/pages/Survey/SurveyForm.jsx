@@ -35,7 +35,7 @@ function SurveyForm() {
 
     await Promise.all(endpoints.map(async ([endpoint, setter]) => {
       try {
-        const res = await axios.get(`http://localhost:8000/api/${endpoint}/`, {
+        const res = await axios.get(`https://survey-ink.com/api/${endpoint}/`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setter(res.data);
@@ -49,7 +49,7 @@ function SurveyForm() {
     const fetchSurvey = async () => {
       try {
         const token = localStorage.getItem('access');
-        const res = await axios.get(`http://localhost:8000/surveys/${id}/display/`, {
+        const res = await axios.get(`https://survey-ink.com/surveys/${id}/display/`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         console.log(res.data.user_role)
@@ -115,7 +115,7 @@ function SurveyForm() {
 
     try {
       const token = localStorage.getItem('access');
-      await axios.post(`http://localhost:8000/surveys/${id}/submit/`, {
+      await axios.post(`https://survey-ink.com/surveys/${id}/submit/`, {
         demographics, answers, duration: durationSeconds
       }, {
         headers: { Authorization: `Bearer ${token}` }

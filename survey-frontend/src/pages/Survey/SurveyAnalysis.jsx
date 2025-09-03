@@ -103,7 +103,7 @@ function SurveyAnalysis({ isRTL }) {
   useEffect(() => {
     const fetchAnalysisData = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/survey/${id}/analysis/`, {
+        const res = await axios.get(`https://survey-ink.com/survey/${id}/analysis/`, {
           withCredentials: true,
         });
 

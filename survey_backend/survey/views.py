@@ -379,7 +379,7 @@ class FreelancerDashboardAPIView(APIView):
         now = timezone.now()
         current_year = now.year
         current_month = now.month
-        user_info = UserProfile.objects.get(user=freelancer)
+        user_info, created = UserProfile.objects.get_or_create(user=freelancer)
         user_data = UserProfileSerializer(user_info)
 
         # Adjust based on your logic of assigned surveys

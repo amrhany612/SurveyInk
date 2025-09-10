@@ -51,7 +51,7 @@ function FreelancerDashboard() {
         setStats(response.data);
 
         const defaultImage = 'https://www.w3schools.com/howto/img_avatar.png';
-        const user = response.data.user_info.user;
+        const user = response.data.user_info.user
         const username = `${user.first_name || ''} ${user.last_name || ''}`.trim() || localStorage.getItem('username') || 'User';
         const image = response.data.image || defaultImage;
         setUserInfo({ username, image });

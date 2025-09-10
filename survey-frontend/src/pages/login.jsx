@@ -42,9 +42,9 @@ function Login() {
       credentials: 'include',
       body: JSON.stringify({ email, password }),
     });
-
+ 
     const data = await response.json();
-
+    console.log(data)	
     if (!response.ok) {
       // Display the error message from the backend if available
       const errorMessage = data.detail || data.error || 'Login failed';

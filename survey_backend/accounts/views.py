@@ -83,69 +83,148 @@ class GetCSRFToken(APIView):
 #             return response
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class LoginView(APIView):
-    permission_classes = [AllowAny]  # <--- This is required!
+#class TestLoginView(APIView):
+ #   permission_classes = [AllowAny]  # <--- This is required!
 
-    print('test')
+    
+  #  def post(self, request):
+                
+   #     email = request.data.get('email')
+    #    password = request.data.get('password')
+     #   print(email)
+         #Try to get user by email
+      #  try:
+       #     user = User.objects.get(email=email)
+        #except User.DoesNotExist:
+         #   return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+        #print("Hany2")
+        # Check password
+        #if not user.check_password(password):
+         #   return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+        #print("Hany3")
+         #Generate tokens
+     
+        #print("Before refresh")
+        #refresh = RefreshToken.for_user(user)
+        #print("After refresh")
+
+        #try:
+         #  profile = user.userprofile
+          # role = profile.role
+           #print("Got role:", role)
+        #except Exception as e:
+         #  print("DEBUG profile error:", e)
+          # role = "user"
+
+        #response = Response({
+    #"access": str(refresh.access_token),
+    #"refresh": str(refresh),
+    #"user": {
+     #   "id": user.id,
+      #  "email": user.email,
+       # "role": role,
+    #}
+#}, status=status.HTTP_200_OK)
+
+ #       response.set_cookie(
+  #       key='access_token',
+   #      value=str(refresh.access_token),
+    #     httponly=True,
+     #    secure=True,
+      #   samesite='Lax'
+       #)
+        #print("After access_token cookie")
+
+        #response.set_cookie(
+    #key='refresh_token',
+    #value=str(refresh),
+    #httponly=True,
+    #secure=True,
+    #samesite='Lax'
+#)
+#print("After refresh_token cookie")
+
+#return response
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+class LoginView(APIView):
+    permission_classes = [AllowAny]
+
     def post(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
-        print('Hany')
-        # Try to get user by email
+        email = request.data.get("email")
+        password = request.data.get("password")
+
+        print("🔹 TestLogin attempt:", email)
+
+        # 1. Validate email
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
-            return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"error": "Invalid credentials (email)"}, status=401)
 
-        # Check password
+        # 2. Validate password
         if not user.check_password(password):
-            return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"error": "Invalid credentials (password)"}, status=401)
 
-        # Generate tokens
-        refresh = RefreshToken.for_user(user)
+        print("✅ User validated")
 
-        # Optional: Get role from user profile
+        # 3. Generate tokens safely
+        try:
+            refresh = RefreshToken.for_user(user)
+            access_token = str(refresh.access_token)
+            refresh_token = str(refresh)
+            print("✅ Tokens generated")
+        except Exception as e:
+            print("❌ Token error:", e)
+            return Response({"error": f"Token generation failed: {str(e)}"}, status=500)
+
+        # 4. Get role (optional)
+        role = "user"
         try:
             profile = user.userprofile
-            role = profile.role
-        except:
-            role = 'user'
+            role = getattr(profile, "role", "user")
+            print("✅ Role:", role)
+        except Exception as e:
+            print("⚠️ Profile error:", e)
 
-        response = Response({
-            'message': 'Login successful',
-            'role': role,
-            'user': {
-                'id': user.id,
-                'email': user.email,
-                'role': role,
-            },
-            'access': str(refresh.access_token),
-            'refresh': str(refresh),
-        }, status=status.HTTP_200_OK)
+        # 5. Build response safely
+        try:
+            response = Response({
+                "access": access_token,
+                "refresh": refresh_token,
+                "user": {
+                    "id": user.id,
+                    "email": user.email,
+                    "role": role,
+                }
+            }, status=200)
 
-        # Set JWT in HttpOnly cookies
-        response.set_cookie(
-            key='access_token',
-            value=str(refresh.access_token),
-            httponly=True,
-            secure=False,  # True if HTTPS
-            samesite='Lax'
-        )
-        response.set_cookie(
-            key='refresh_token',
-            value=str(refresh),
-            httponly=True,
-            secure=False,
-            samesite='Lax'
-        )
-        response.set_cookie(
-            key='csrftoken',
-            value=csrf.get_token(request),
-            httponly=False,
-            secure=False
-        )
+            response.set_cookie(
+                key="access_token",
+                value=access_token,
+                httponly=True,
+                secure=True,
+                samesite="Lax"
+            )
+            print("✅ Access cookie set")
 
-        return response
+            response.set_cookie(
+                key="refresh_token",
+                value=refresh_token,
+                httponly=True,
+                secure=True,
+                samesite="Lax"
+            )
+            print("✅ Refresh cookie set")
+
+            return response
+
+        except Exception as e:
+            print("❌ Response error:", e)
+            return Response({"error": f"Response building failed: {str(e)}"}, status=500)
+
 
 # class CheckAuthView(APIView):
 #     permission_classes = [IsAuthenticated]

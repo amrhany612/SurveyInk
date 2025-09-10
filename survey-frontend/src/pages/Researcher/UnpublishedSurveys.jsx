@@ -40,7 +40,7 @@ function UnpublishedSurveys({ isRTL }) {
     try {
       const token = localStorage.getItem("access");
       const response = await axios.get(
-        "http://localhost:8000/unpublished-surveys/",
+        "https://survey-ink.com/unpublished-surveys/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ function UnpublishedSurveys({ isRTL }) {
     try {
       const token = localStorage.getItem("access");
       await axios.post(
-        `http://localhost:8000/publish-survey/${id}/`,
+        `https://survey-ink.com/publish-survey/${id}/`,
         {},
         {
           headers: {

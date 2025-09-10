@@ -80,7 +80,7 @@ const EditSurvey = () => {
     }
 
     axios
-      .get(`http://localhost:8000/researcher/surveys/${id}/`, {
+      .get(`https://survey-ink.com/researcher/surveys/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -102,7 +102,7 @@ const EditSurvey = () => {
       });
 
     axios
-      .get("http://localhost:8000/api/universities/")
+      .get("https://survey-ink.com/api/universities/")
       .then((response) => setUniversities(response.data))
       .catch(() => {
         toast.error(
@@ -119,7 +119,7 @@ const EditSurvey = () => {
 
     try {
       await axios.put(
-        `http://localhost:8000/researcher/surveys/${id}/`,
+        `https://survey-ink.com/researcher/surveys/${id}/`,
         {
           title: name,
           description,

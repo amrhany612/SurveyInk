@@ -22,7 +22,7 @@ const EditSurveyQuestions = () => {
     if (!token) return;
 
     axios
-      .get(`http://localhost:8000/researcher/surveys/${id}/questions/`, {
+      .get(`https://survey-ink.com/researcher/surveys/${id}/questions/`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -108,7 +108,7 @@ const EditSurveyQuestions = () => {
     });
 
     axios
-      .put(`http://localhost:8000/researcher/surveys/${id}/questions/`, cleaned, {
+      .put(`https://survey-ink.com/researcher/surveys/${id}/questions/`, cleaned, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {

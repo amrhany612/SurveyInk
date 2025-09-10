@@ -46,7 +46,7 @@ function SurveyForm() {
       endpoints.map(async ([endpoint, setter]) => {
         try {
           const res = await axios.get(
-            `http://localhost:8000/api/${endpoint}/`,
+            `https://survey-ink.com/api/${endpoint}/`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -64,7 +64,7 @@ function SurveyForm() {
       try {
         const token = localStorage.getItem("access");
         const res = await axios.get(
-          `http://localhost:8000/surveys/${id}/display/`,
+          `https://survey-ink.com/surveys/${id}/display/`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -130,7 +130,7 @@ function SurveyForm() {
     try {
       const token = localStorage.getItem("access");
       await axios.post(
-        `http://localhost:8000/surveys/${id}/submit/`,
+        `https://survey-ink.com/surveys/${id}/submit/`,
         {
           demographics,
           answers,

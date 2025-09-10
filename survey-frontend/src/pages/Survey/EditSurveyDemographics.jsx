@@ -95,10 +95,10 @@ const EditSurveyDemographics = () => {
     const fetchDropdowns = async () => {
       const [countryRes, universityRes, fieldRes, professionRes] =
         await Promise.all([
-          axios.get("http://localhost:8000/api/countries/"),
-          axios.get("http://localhost:8000/api/universities/"),
-          axios.get("http://localhost:8000/api/fields_of_study/"),
-          axios.get("http://localhost:8000/api/professions/"),
+          axios.get("https://survey-ink.com/api/countries/"),
+          axios.get("https://survey-ink.com/api/universities/"),
+          axios.get("https://survey-ink.com/api/fields_of_study/"),
+          axios.get("https://survey-ink.com/api/professions/"),
         ]);
 
       setCountries(countryRes.data);
@@ -107,7 +107,7 @@ const EditSurveyDemographics = () => {
       setProfessions(professionRes.data);
 
       const demoRes = await axios.get(
-        `http://localhost:8000/surveys/${id}/demographics/`,
+        `https://survey-ink.com/surveys/${id}/demographics/`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -147,7 +147,7 @@ const EditSurveyDemographics = () => {
 
     try {
       await axios.put(
-        `http://localhost:8000/surveys/${id}/demographics/`,
+        `https://survey-ink.com/surveys/${id}/demographics/`,
         {
           gender,
           age_min: ageMin,

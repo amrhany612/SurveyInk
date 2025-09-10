@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://survey-ink.com',
+  baseURL: 'http://localhost:8000',
 });
 
 // ✅ Add interceptor to always set the latest token

@@ -57,7 +57,8 @@ const SurveySubmissions = () => {
         marginBottom: '2rem',
         color: '#35508C',
         fontWeight: 'bold'
-      }}>
+      }}
+      >
         Survey Submissions
       </h2>
 

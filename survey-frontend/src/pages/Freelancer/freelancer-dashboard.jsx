@@ -66,7 +66,6 @@ function FreelancerDashboard() {
     async function fetchDashboard() {
       try {
         const token = localStorage.getItem("access");
-        console.log(token)
         if (!token) {
           handleLogout(new Event("logout"));
           return;
@@ -79,6 +78,8 @@ function FreelancerDashboard() {
         setStats(response.data);
 
         const defaultImage = "https://www.w3schools.com/howto/img_avatar.png";
+        console.log(response.data.user_info.user)
+        console.log(response.data)
         const user = response.data.user_info.user;
         console.log(response.data.user_info)
         console.log(user)

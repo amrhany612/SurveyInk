@@ -184,7 +184,6 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'profession',
             'university',
             'role',          # <-- comes from UserProfile model
-            'email',
             'is_verified',
         ]
 

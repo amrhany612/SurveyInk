@@ -107,7 +107,7 @@ const EditSurveyDemographics = () => {
       setProfessions(professionRes.data);
 
       const demoRes = await axios.get(
-        `https://survey-ink.com/surveys/${id}/demographics/`,
+        `https://survey-ink.com/api/surveys/${id}/demographics/`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -147,7 +147,7 @@ const EditSurveyDemographics = () => {
 
     try {
       await axios.put(
-        `https://survey-ink.com/surveys/${id}/demographics/`,
+        `https://survey-ink.com/api/surveys/${id}/demographics/`,
         {
           gender,
           age_min: ageMin,

@@ -64,7 +64,7 @@ function SurveyForm() {
       try {
         const token = localStorage.getItem("access");
         const res = await axios.get(
-          `https://survey-ink.com/surveys/${id}/display/`,
+          `https://survey-ink.com/api/surveys/${id}/display/`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -130,7 +130,7 @@ function SurveyForm() {
     try {
       const token = localStorage.getItem("access");
       await axios.post(
-        `https://survey-ink.com/surveys/${id}/submit/`,
+        `https://survey-ink.com/api/surveys/${id}/submit/`,
         {
           demographics,
           answers,

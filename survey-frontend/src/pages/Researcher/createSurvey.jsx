@@ -116,7 +116,7 @@ const CreateSurvey = () => {
     };
 
     try {
-      const response = await fetch("https://survey-ink.com/create-survey/", {
+      const response = await fetch("https://survey-ink.com/api/create-survey/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

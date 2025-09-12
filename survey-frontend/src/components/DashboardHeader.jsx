@@ -27,7 +27,7 @@ function ResearcherDashboard() {
 
  useEffect(() => {
   const fetchStats = async () => {
-    const response = await fetch('https://survey-ink.com/researcher-dashboard', {
+    const response = await fetch('https://survey-ink.com/api/researcher-dashboard', {
       method: 'GET',
       credentials: 'include', // 🔥 This sends cookies with the request
     });

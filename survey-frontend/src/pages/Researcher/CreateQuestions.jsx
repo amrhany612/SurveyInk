@@ -180,7 +180,7 @@ const CreateQuestions = () => {
     try {
       const token = localStorage.getItem("access");
       await axios.post(
-        `https://survey-ink.com/surveys/${surveyId}/questions/bulk_create`,
+        `https://survey-ink.com/api/surveys/${surveyId}/questions/bulk_create`,
         payload,
         {
           headers: {

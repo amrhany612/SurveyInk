@@ -86,7 +86,7 @@ const SurveyAnalysis = ({ isRTL }) => {
         }
 
         const res = await axios.get(
-          `https://survey-ink.com/survey/${id}/analysis/`,
+          `https://survey-ink.com/api/survey/${id}/analysis/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

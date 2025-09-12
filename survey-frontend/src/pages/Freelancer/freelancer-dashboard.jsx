@@ -71,7 +71,7 @@ function FreelancerDashboard() {
           return;
         }
 
-        const response = await api.get("/freelancer-dashboard", {
+        const response = await api.get("/freelancer-dashboard/", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

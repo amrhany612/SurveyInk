@@ -20,7 +20,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
-SITE_URL = os.getenv("SITE_URL", "https://survey-ink.com")
+SITE_URL = os.getenv("SITE_URL", "https://survey-ink.com/api")
 
 # ------------------------
 # Applications
@@ -128,13 +128,13 @@ SIMPLE_JWT = {
 # ------------------------
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    os.getenv("SITE_URL", "https://survey-ink.com"),
+    os.getenv("SITE_URL", "https://survey-ink.com/api"),
 ]
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    os.getenv("SITE_URL", "https://survey-ink.com"),
+    os.getenv("SITE_URL", "https://survey-ink.com/api"),
 ]
 
 # ------------------------

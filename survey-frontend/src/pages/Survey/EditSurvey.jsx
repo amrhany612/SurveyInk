@@ -80,7 +80,7 @@ const EditSurvey = () => {
     }
 
     axios
-      .get(`https://survey-ink.com/researcher/surveys/${id}/`, {
+      .get(`https://survey-ink.com/api/researcher/surveys/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -119,7 +119,7 @@ const EditSurvey = () => {
 
     try {
       await axios.put(
-        `https://survey-ink.com/researcher/surveys/${id}/`,
+        `https://survey-ink.com/api/researcher/surveys/${id}/`,
         {
           title: name,
           description,

@@ -89,7 +89,7 @@ class UserRegistrationSerializer(serializers.Serializer):
         token = default_token_generator.make_token(user)
         uid = user.pk
 
-        frontend_url = "https://survey-ink.com"  # Your React app URL
+        frontend_url = "https://survey-ink.com/api"  # Your React app URL
         verification_link = f"{frontend_url}/verify-email?uid={uid}&token={token}"
         
 

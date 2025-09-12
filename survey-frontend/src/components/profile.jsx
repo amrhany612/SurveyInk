@@ -28,7 +28,7 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("access");
-        const response = await fetch("https://survey-ink.com/profile/", {
+        const response = await fetch("https://survey-ink.com/api/profile/", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (response.status === 401) {

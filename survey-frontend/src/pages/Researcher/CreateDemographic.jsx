@@ -78,10 +78,10 @@ const CreateDemographic = () => {
     const fetchAll = async () => {
       try {
         const [r1, r2, r3, r4] = await Promise.all([
-          api.get("/api/countries/"),
-          api.get("/api/universities/"),
-          api.get("/api/fields_of_study/"),
-          api.get("/api/professions/"),
+          api.get("/countries/"),
+          api.get("/universities/"),
+          api.get("/fields_of_study/"),
+          api.get("/professions/"),
         ]);
         setCountries(r1.data);
         setUniversities(r2.data);

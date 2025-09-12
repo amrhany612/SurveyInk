@@ -40,7 +40,7 @@ function UnpublishedSurveys({ isRTL }) {
     try {
       const token = localStorage.getItem("access");
       const response = await axios.get(
-        "https://suvey-ink.com/api/unpublished-surveys/",
+        "https://survey-ink.com/api/unpublished-surveys/",
         {
           headers: {
             Authorization: `Bearer ${token}`,

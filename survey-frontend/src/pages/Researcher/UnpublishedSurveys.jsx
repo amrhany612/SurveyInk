@@ -40,7 +40,7 @@ function UnpublishedSurveys({ isRTL }) {
     try {
       const token = localStorage.getItem("access");
       const response = await axios.get(
-        "https://survey-ink.com/api/unpublished-surveys/",
+        "https://suvey-ink.com/api/unpublished-surveys/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -262,7 +262,7 @@ function UnpublishedSurveys({ isRTL }) {
             >
               <thead>
                 <tr style={{ backgroundColor: "#395692", color: "#fff" }}>
-                  <th style={headerStyle}>
+                  <th style={headerStyle} className="w-1/3">
                     {isRTL ? "📋 العنوان" : "📋 Title"}
                   </th>
                   <th style={headerStyle}>
@@ -296,11 +296,11 @@ function UnpublishedSurveys({ isRTL }) {
                               backgroundColor: "#F19303",
                               color: "#fff",
                               border: "none",
-                              borderRadius: "40px",
-                              padding: "6px 12px",
+                              borderRadius: "20px",
                               cursor: "pointer",
-                              fontSize: "15px",
-                              fontWeight: "bold",
+                              padding: "6px",
+                              fontSize: "12px",
+                              width: "60px",
                             }}
                           >
                             {isRTL ? "إجراء" : "Take Action"}
@@ -319,10 +319,11 @@ function UnpublishedSurveys({ isRTL }) {
                                 backgroundColor: "#F19303",
                                 color: "#fff",
                                 border: "none",
-                                borderRadius: "40px",
-                                padding: "6px 12px",
+                                borderRadius: "20px",
                                 cursor: "pointer",
-                                fontWeight: "bold",
+                                padding: "6px",
+                                fontSize: "12px",
+                                width: "55px",
                               }}
                             >
                               {isRTL ? "نشر" : "Publish"}
@@ -335,10 +336,11 @@ function UnpublishedSurveys({ isRTL }) {
                                 backgroundColor: "#F19303",
                                 color: "#fff",
                                 border: "none",
-                                borderRadius: "40px",
-                                padding: "6px 12px",
+                                borderRadius: "20px",
                                 cursor: "pointer",
-                                fontWeight: "bold",
+                                padding: "6px",
+                                fontSize: "12px",
+                                width: "55px",
                               }}
                             >
                               {isRTL ? "عرض" : "View"}
@@ -351,10 +353,11 @@ function UnpublishedSurveys({ isRTL }) {
                                 backgroundColor: "#F19303",
                                 color: "#fff",
                                 border: "none",
-                                borderRadius: "40px",
-                                padding: "6px 12px",
+                                borderRadius: "20px",
                                 cursor: "pointer",
-                                fontWeight: "bold",
+                                padding: "6px",
+                                fontSize: "12px",
+                                width: "55px",
                               }}
                             >
                               {isRTL ? "تعديل" : "Edit"}

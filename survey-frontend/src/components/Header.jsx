@@ -151,14 +151,14 @@ function Header() {
         </nav>
 
         <div className={`hidden md:flex items-center gap-4 order-${authOrder}`}>
-          <select
+          {/*<select
             onChange={(e) => changeLanguage(e.target.value)}
             value={i18n.language}
             className="border border-black px-2 py-1 text-black"
           >
             <option value="en">EN</option>
             <option value="ar">AR</option>
-          </select>
+          </select>*/}
 
           {isAuthenticated ? (
             <div className="relative" ref={profileMenuRef}>
@@ -243,14 +243,14 @@ function Header() {
 
             <hr className="border-gray-300 my-2" />
 
-            <select
+            {/*<select
               onChange={(e) => changeLanguage(e.target.value)}
               value={i18n.language}
               className="bg-white text-black border border-black px-2 py-1"
             >
               <option value="en">EN</option>
               <option value="ar">AR</option>
-            </select>
+            </select>*/}
 
             {isAuthenticated ? (
               <div className="flex flex-col gap-2">

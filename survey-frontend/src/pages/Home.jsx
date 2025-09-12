@@ -20,7 +20,7 @@ import HeroVideo from "../assets/hero_section_video.mp4";
 import wordBg from "../assets/brand asset.svg";
 import dollarImage from "../assets/DollarImage.png";
 import empoweringBgImage from "../assets/B.G.svg";
-import empoweringImage from "../assets/empoweringHome.png";
+import empower from "../assets/3d-rendering-isometric-fdgdf 1.png";
 import "./css/Home.css";
 import Container from "../components/Container";
 import GetStarted from "../components/GetStarted";
@@ -531,11 +531,13 @@ function Home() {
 
           {/* Right Side - Absolute Image (only on lg and above) */}
           <img
-            src={empoweringImage}
-            alt="Empowering Illustration"
+            src={empower}
+            alt="3d"
             className={`hidden lg:block absolute bottom-0  ${
-              direction === "rtl" ? "left-5" : "right-5"
-            } w-[45%] object-contain`}
+              direction === "rtl" ? "left-0" : "right-2"
+            } w-[70%] object-contain ${
+              direction === "rtl" ? "scale-x-[-1]" : "unset"
+            }`}
           />
         </Container>
       </section>

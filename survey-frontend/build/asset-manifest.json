@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.85e36fac.css",
-    "main.js": "/static/js/main.0cf64c44.js",
+    "main.css": "/static/css/main.e56ed645.css",
+    "main.js": "/static/js/main.39399948.js",
     "static/js/488.7e8f63e8.chunk.js": "/static/js/488.7e8f63e8.chunk.js",
     "static/media/our_mission_image.svg": "/static/media/our_mission_image.764f6d0311c07bc0c3dd42e64d07d847.svg",
     "static/media/hero_section_video.mp4": "/static/media/hero_section_video.c437e0a3c3fd84eac1d4.mp4",
@@ -19,6 +19,7 @@
     "static/media/login_background.png": "/static/media/login_background.68d19f2242ca5ed01ea4.png",
     "static/media/our_mission.png": "/static/media/our_mission.b69a42e28ca6a917d1e6.png",
     "static/media/empowering.png": "/static/media/empowering.92dd25404714cee3de36.png",
+    "static/media/3d-rendering-isometric-fdgdf 1.png": "/static/media/3d-rendering-isometric-fdgdf 1.ff7ed64a29b86c942d61.png",
     "static/media/mobile.png": "/static/media/mobile.9d81d7d8e33b6ac6fa9d.png",
     "static/media/DollarImage.png": "/static/media/DollarImage.4c6cd6659459be5ad8fb.png",
     "static/media/mobile2.png": "/static/media/mobile2.f4884feac3763a9ef893.png",
@@ -30,7 +31,6 @@
     "static/media/background.png": "/static/media/background.34642fd06e5f8981c0ab.png",
     "static/media/Dual-Language Platform-pictogram.jpg": "/static/media/Dual-Language Platform-pictogram.d830e98146d0f84d14e1.jpg",
     "static/media/Verified Participants.jpg": "/static/media/Verified Participants.4056b7119e56cc8b7ddd.jpg",
-    "static/media/empoweringHome.png": "/static/media/empoweringHome.f4eb19ad0133a14dfbfd.png",
     "static/media/logo3.png": "/static/media/logo3.ea64287551b18484dce3.png",
     "static/media/One-Time Response Policy.jpg": "/static/media/One-Time Response Policy.f1b163c8b9259768fa8d.jpg",
     "static/media/logo.png": "/static/media/logo.9ef47896d76b9b4304b3.png",
@@ -55,12 +55,12 @@
     "static/media/Vector 6.svg": "/static/media/Vector 6.205f98fe7ec3ae12e1fe2408abfadb88.svg",
     "static/media/brand asset.svg": "/static/media/brand asset.54d6ec1785d7a5ba155264e00bc7b6af.svg",
     "static/media/logs.svg": "/static/media/logs.eb2da2e4a8e2823899a86628b2f59ddb.svg",
-    "main.85e36fac.css.map": "/static/css/main.85e36fac.css.map",
-    "main.0cf64c44.js.map": "/static/js/main.0cf64c44.js.map",
+    "main.e56ed645.css.map": "/static/css/main.e56ed645.css.map",
+    "main.39399948.js.map": "/static/js/main.39399948.js.map",
     "488.7e8f63e8.chunk.js.map": "/static/js/488.7e8f63e8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.85e36fac.css",
-    "static/js/main.0cf64c44.js"
+    "static/css/main.e56ed645.css",
+    "static/js/main.39399948.js"
   ]
 }

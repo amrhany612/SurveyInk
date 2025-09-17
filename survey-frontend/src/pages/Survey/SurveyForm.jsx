@@ -93,7 +93,7 @@ function SurveyForm() {
           if (prev <= 1) {
             clearInterval(interval);
             alert(isRTL ? "انتهى الوقت" : "Time is up");
-            navigate("/all-surveys");
+            navigate("/surveys/pending");
             return 0;
           }
           return prev - 1;

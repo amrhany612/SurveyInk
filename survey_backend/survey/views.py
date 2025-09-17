@@ -108,7 +108,7 @@ class AllSurveysView(ListAPIView):
         search = self.request.query_params.get('search', '')
         
         # Start by filtering for published surveys
-        queryset = Survey.objects.filter(is_published=True).order_by('-created_at')
+        queryset = Survey.objects.filter(creator=self.request.user,is_published=True).order_by('-created_at')
 
         # If search keyword is provided, filter by title
         if search:
@@ -185,7 +185,7 @@ class UnpublishedSurveyCount(APIView):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def unpublished_surveys(request):
-    surveys = Survey.objects.filter(is_published=False)
+    surveys = Survey.objects.filter(creator=request.user,is_published=False)
     serializer = SurveySerializer(surveys, many=True)
     return Response(serializer.data)
 

@@ -26,6 +26,8 @@ import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import Container from "../components/Container";
 import GetStarted from "../components/GetStarted";
+import survTablet from "../assets/survTablet.jpg";
+import gridiant from "../assets/gridiant.svg";
 
 function AboutUs() {
   const { t } = useTranslation();
@@ -237,7 +239,7 @@ function AboutUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 w-full justify-items-center">
             <div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-[400px] flex flex-col items-start">
               <img
-                src={surveyImage}
+                src={survTablet}
                 alt="Survey Hosting"
                 className="w-full object-cover"
                 style={{ height: "200px" }}
@@ -406,19 +408,29 @@ function AboutUs() {
                   display: "flex",
                   justifyContent: "center",
                   backgroundColor: "white",
+                  position: "relative",
                 }}
               >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(115.89deg, rgba(193, 222, 232, 0.7) 9.86%, rgba(255, 255, 255, 0) 52.13%, rgba(251, 217, 185, 0.7) 97.99%)",
+                    position: "absolute",
+                  }}
+                ></div>
                 <img
                   src={languageImage}
                   alt="Survey Hosting"
                   className="h-40 object-contain"
                 />
               </div>
-              <div style={{ padding: "20px" }}>
-                <h3 className="text-[#FEA319] text-lg font-bold">
+              <div style={{ padding: "8px 12px 0 12px" }}>
+                <h3 className="text-[#FEA319] text-[18px] sm:text-[22px] font-bold pb-2">
                   Dual-Language Platform
                 </h3>
-                <p className="text-white text-sm leading-relaxed">
+                <p className="text-white text-[15px] font-bold leading-relaxed">
                   Secure and reliable hosting for your surveys, ensuring data
                   integrity and accessibility across the region.
                 </p>
@@ -442,19 +454,29 @@ function AboutUs() {
                   display: "flex",
                   justifyContent: "center",
                   backgroundColor: "white",
+                  position: "relative",
                 }}
               >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(115.89deg, rgba(193, 222, 232, 0.7) 9.86%, rgba(255, 255, 255, 0) 52.13%, rgba(251, 217, 185, 0.7) 97.99%)",
+                    position: "absolute",
+                  }}
+                ></div>
                 <img
                   src={paymentImage}
                   alt="Survey Hosting"
                   className="h-40 object-contain"
                 />
               </div>
-              <div style={{ padding: "20px" }}>
-                <h3 className="text-[#FEA319] text-lg font-bold pl-3 pb-3">
+              <div style={{ padding: "8px 12px 0 12px" }}>
+                <h3 className="text-[#FEA319] text-[18px] sm:text-[22px] font-bold pb-2">
                   Fair Compensation
                 </h3>
-                <p className="text-white text-sm leading-relaxed pl-3 pb-3">
+                <p className="text-white text-[15px] sm:text-[17px] font-bold leading-relaxed">
                   Comprehensive assistance with research paper development, from
                   methodology to final presentation.
                 </p>
@@ -478,19 +500,29 @@ function AboutUs() {
                   display: "flex",
                   justifyContent: "center",
                   backgroundColor: "white",
+                  position: "relative",
                 }}
               >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(115.89deg, rgba(193, 222, 232, 0.7) 9.86%, rgba(255, 255, 255, 0) 52.13%, rgba(251, 217, 185, 0.7) 97.99%)",
+                    position: "absolute",
+                  }}
+                ></div>
                 <img
                   src={verifyImage}
                   alt="Survey Hosting"
                   className="h-40 object-contain"
                 />
               </div>
-              <div style={{ padding: "20px" }}>
-                <h3 className="text-[#FEA319] text-lg font-bold pl-3 pb-3">
+              <div style={{ padding: "8px 12px 0 12px" }}>
+                <h3 className="text-[#FEA319] text-[18px] sm:text-[22px] font-bold pb-2">
                   Verified Participants
                 </h3>
-                <p className="text-white text-sm leading-relaxed pl-3 pb-3">
+                <p className="text-white text-[15px] sm:text-[17px] font-bold leading-relaxed">
                   Expert statistical analysis to help you interpret your data
                   and draw accurate conclusions.
                 </p>
@@ -514,19 +546,29 @@ function AboutUs() {
                   display: "flex",
                   justifyContent: "center",
                   backgroundColor: "white",
+                  position: "relative",
                 }}
               >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(115.89deg, rgba(193, 222, 232, 0.7) 9.86%, rgba(255, 255, 255, 0) 52.13%, rgba(251, 217, 185, 0.7) 97.99%)",
+                    position: "absolute",
+                  }}
+                ></div>
                 <img
                   src={responseImage}
                   alt="Survey Hosting"
                   className="h-40 object-contain"
                 />
               </div>
-              <div style={{ padding: "20px" }}>
-                <h3 className="text-[#FEA319] text-lg font-bold pl-3 pb-3">
+              <div style={{ padding: "8px 12px 0 12px" }}>
+                <h3 className="text-[#FEA319] text-[18px] sm:text-[22px] font-bold pb-2">
                   One-Time Response Policy
                 </h3>
-                <p className="text-white text-sm leading-relaxed pl-3 pb-3">
+                <p className="text-white text-[15px] sm:text-[17px] font-bold leading-relaxed">
                   Guidance through the academic publishing process, increasing
                   your chances of success.
                 </p>

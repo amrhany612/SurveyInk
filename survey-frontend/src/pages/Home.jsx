@@ -24,6 +24,13 @@ import empower from "../assets/3d-rendering-isometric-fdgdf 1.png";
 import "./css/Home.css";
 import Container from "../components/Container";
 import GetStarted from "../components/GetStarted";
+import exchange1 from "../assets/exchange1.png";
+import exchange2 from "../assets/exvhange2.png";
+import exchange from "../assets/exchange.mp4";
+import survTablet from "../assets/survTablet.jpg";
+import survTablet2 from "../assets/survTablet2.jpg";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
 function Home() {
   const navigate = useNavigate();
 
@@ -32,6 +39,16 @@ function Home() {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [exchange1, exchange2];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev === 0 ? 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const updateMaxIndex = () => {
@@ -96,8 +113,40 @@ function Home() {
         </video>
 
         {/* Content Overlay */}
-        <Container className="h-full" style={{ direction }}>
-          <div className="relative z-10 text-white h-full flex flex-col justify-center">
+        <div
+          className={`h-full
+            mx-auto px-4 w-[97%] 
+          `}
+        >
+          <div className="text-white flex md:hidden absolute bottom-0 left-1/2 -translate-x-1/2 items-center w-[90%] justify-between">
+            <span className="text-[20px]">Follow us</span>
+            <div
+              style={{
+                direction,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <div>
+                <a href="https://facebook.com/surveyink">
+                  <FaFacebookF style={{ fontSize: "20px" }} />
+                </a>
+              </div>
+              <div>
+                <a href="https://instagram.com/surveyink">
+                  <FaInstagram style={{ fontSize: "20px" }} />
+                </a>
+              </div>
+              <div className="ml-[3px]">
+                <a href="https://linkedin.com/company/surveyink">
+                  <FaLinkedinIn style={{ fontSize: "20px" }} />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="relative z-10 text-white h-full flex flex-col justify-center ">
             <div className="max-w-[704px]">
               <p className="text-xl max-w-[800px] mb-8 opacity-95 text-start">
                 {t("Welcome to surveyInk")}
@@ -116,8 +165,45 @@ function Home() {
                 </a>
               </div>
             </div>
+            <div className="md:flex justify-between items-end absolute bottom-0 w-[100%] pb-[22px] hidden">
+              <span className="text-[20px]">Follow us</span>
+              <div className="flex items-center gap-3">
+                <div
+                  style={{
+                    border: "2px solid white",
+                    padding: "2px",
+                    borderRadius: "7px",
+                  }}
+                >
+                  <a href="https://facebook.com/surveyink" className="text-xl">
+                    <FaFacebookF />
+                  </a>
+                </div>
+                <a
+                  href="https://instagram.com/surveyink"
+                  className="text-[32px]"
+                >
+                  <FaInstagram />
+                </a>
+
+                <div
+                  style={{
+                    border: "2px solid white",
+                    padding: "2px",
+                    borderRadius: "7px",
+                  }}
+                >
+                  <a
+                    href="https://linkedin.com/company/surveyink"
+                    className="text-xl"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* Features Section */}
@@ -362,7 +448,7 @@ function Home() {
                 >
                   <div className="flex-2 w-full overflow-hidden">
                     <img
-                      src={surveyHosting}
+                      src={survTablet}
                       alt={t("surveyHosting")}
                       className="w-full h-full object-cover"
                     />
@@ -458,12 +544,17 @@ function Home() {
             </div>
 
             {/* Right Side - Image */}
-            <div className="flex-1 min-w-[280px] text-center lg:text-right">
-              <img
-                src={dollarImage}
-                alt="Currency Support"
-                className="max-w-full h-auto mx-auto lg:mx-0"
-              />
+            <div className="lg:w-[42%] w-[90%] min-h-[197px] max-h-[197px] rounded-xl overflow-hidden relative">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt="Currency Exchange"
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
+                    currentImage === index ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </section>

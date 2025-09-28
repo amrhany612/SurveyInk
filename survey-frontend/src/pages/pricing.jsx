@@ -55,14 +55,18 @@ function Pricing() {
         </div>
       </section>
 
-      <div className="relative">
+      <div className="relative font-bold">
         <div className="container mx-auto absolute z-[10] left-1/2 -translate-x-1/2 -top-[120px] lg:-top-[200px]">
-          <div className="grid grid-cols-1 lg:grid-cols-4">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-4"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
             <div className="flex flex-col items-center mb-12 lg:mb-0">
               <div
                 style={{
                   backgroundImage:
-                    "linear-gradient(to right, #C1DEE8 0%, #ffffff 100%)",
+                    "linear-gradient(to right, #C1DEE8 0%, #C1DEE8 50%, rgba(255, 255, 255, 0.9) 100%)",
                   borderRadius: "15px",
                   border: "1px solid #FEA319",
                 }}
@@ -71,7 +75,7 @@ function Pricing() {
                 <div className="w-32 h-10 bg-[#395692] rounded-lg flex items-center justify-center mb-1">
                   <span className="text-2xl font-bold text-[#FEA319]">100</span>
                 </div>
-                <h3 className="text-[12px] text-[#395692] mb-12">surveys</h3>
+                <h3 className="text-[12px] text-[#395692] mb-14">surveys</h3>
                 <div className="text-3xl font-bold text-[#FEA319]">1000</div>
                 <div className="text-lg text-[#395692] font-bold">EGP</div>
               </div>
@@ -83,8 +87,8 @@ function Pricing() {
               </div>
               <div className="p-4 flex-grow">
                 <p className="text-[12px] leading-relaxed text-center w-56">
-                  Secure and reliable hosting for your surveys, ensuring data
-                  integrity and accessibility across the region.
+                  Create and publish surveys easily with essential tools to get
+                  started right away.
                 </p>
               </div>
             </div>
@@ -93,17 +97,17 @@ function Pricing() {
               <div
                 style={{
                   backgroundImage:
-                    "linear-gradient(to right, #C1DEE8 0%, #ffffff 100%)",
+                    "linear-gradient(to right, #C1DEE8 0%, #C1DEE8 50%, rgba(255, 255, 255, 0.9) 100%)",
                   borderRadius: "15px",
                   border: "1px solid #FEA319",
                 }}
                 className="p-6 pt-12 pb-12 flex flex-col items-center w-full sm:w-1/2 lg:w-5/6 mb-4 lg:mb-12"
               >
                 <div className="w-32 h-10 bg-[#395692] rounded-lg flex items-center justify-center mb-1">
-                  <span className="text-2xl font-bold text-[#FEA319]">100</span>
+                  <span className="text-2xl font-bold text-[#FEA319]">200</span>
                 </div>
-                <h3 className="text-[12px] text-[#395692] mb-12">surveys</h3>
-                <div className="text-3xl font-bold text-[#FEA319]">1000</div>
+                <h3 className="text-[12px] text-[#395692] mb-14">surveys</h3>
+                <div className="text-3xl font-bold text-[#FEA319]">1800</div>
                 <div className="text-lg text-[#395692] font-bold">EGP</div>
               </div>
               <div
@@ -123,17 +127,17 @@ function Pricing() {
               <div
                 style={{
                   backgroundImage:
-                    "linear-gradient(to right, #C1DEE8 0%, #ffffff 100%)",
+                    "linear-gradient(to right, #C1DEE8 0%, #C1DEE8 50%, rgba(255, 255, 255, 0.9) 100%)",
                   borderRadius: "15px",
                   border: "1px solid #FEA319",
                 }}
                 className="p-6 pt-12 pb-12 flex flex-col items-center w-full sm:w-1/2 lg:w-5/6 mb-4 lg:mb-12"
               >
                 <div className="w-32 h-10 bg-[#395692] rounded-lg flex items-center justify-center mb-1">
-                  <span className="text-2xl font-bold text-[#FEA319]">100</span>
+                  <span className="text-2xl font-bold text-[#FEA319]">300</span>
                 </div>
-                <h3 className="text-[12px] text-[#395692] mb-12">surveys</h3>
-                <div className="text-3xl font-bold text-[#FEA319]">1000</div>
+                <h3 className="text-[12px] text-[#395692] mb-14">surveys</h3>
+                <div className="text-3xl font-bold text-[#FEA319]">2500</div>
                 <div className="text-lg text-[#395692] font-bold">EGP</div>
               </div>
               <div
@@ -144,8 +148,8 @@ function Pricing() {
               </div>
               <div className="p-4 flex-grow">
                 <p className="text-[12px] leading-relaxed text-center w-56">
-                  Secure and reliable hosting for your surveys, ensuring data
-                  integrity and accessibility across the region.
+                  Advanced analytics and integrations to help you gather deeper
+                  insights and streamline your workflow.
                 </p>
               </div>
             </div>
@@ -153,17 +157,19 @@ function Pricing() {
               <div
                 style={{
                   backgroundImage:
-                    "linear-gradient(to right, #C1DEE8 0%, #ffffff 100%)",
+                    "linear-gradient(to right, #C1DEE8 0%, #C1DEE8 50%, rgba(255, 255, 255, 0.9) 100%)",
                   borderRadius: "15px",
                   border: "1px solid #FEA319",
                 }}
                 className="p-6 pt-12 pb-12 flex flex-col items-center w-full sm:w-1/2 lg:w-5/6 mb-4 lg:mb-12"
               >
                 <div className="w-32 h-10 bg-[#395692] rounded-lg flex items-center justify-center mb-1">
-                  <span className="text-2xl font-bold text-[#FEA319]">100</span>
+                  <span className="text-2xl font-bold text-[#FEA319]">
+                    +500
+                  </span>
                 </div>
-                <h3 className="text-[12px] text-[#395692] mb-12">surveys</h3>
-                <div className="text-3xl font-bold text-[#FEA319]">1000</div>
+                <h3 className="text-[12px] text-[#395692] mb-14">surveys</h3>
+                <div className="text-3xl font-bold text-[#FEA319]">4000</div>
                 <div className="text-lg text-[#395692] font-bold">EGP</div>
               </div>
               <div
@@ -174,8 +180,8 @@ function Pricing() {
               </div>
               <div className="p-4 flex-grow">
                 <p className="text-[12px] leading-relaxed text-center w-56">
-                  Secure and reliable hosting for your surveys, ensuring data
-                  integrity and accessibility across the region.
+                  Dedicated support and enterprise-grade features tailored for
+                  large-scale research and organizational needs.
                 </p>
               </div>
             </div>
@@ -189,7 +195,7 @@ function Pricing() {
           overflow: "hidden",
           position: "relative",
         }}
-        className="h-[110rem] lg:h-[18rem]"
+        className="h-[114rem] lg:h-[18rem]"
       >
         <img
           src={sectioBackground2}

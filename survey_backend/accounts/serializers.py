@@ -100,13 +100,13 @@ class UserRegistrationSerializer(serializers.Serializer):
             
         })
         print("Hany")
-        #send_mail(
-          #subject="Verify your email",
-          #message="Please verify your email.",   # plain text fallback
-          #from_email=settings.DEFAULT_FROM_EMAIL,
-          #recipient_list=[user.email],
-         # html_message=html_message
-        #)
+        send_mail(
+          subject="Verify your email",
+          message="Please verify your email.",   # plain text fallback
+          from_email=settings.DEFAULT_FROM_EMAIL,
+          recipient_list=[user.email],
+         html_message=html_message
+        )
         print("Hany2")
         EmailLog.objects.create(
             recipient=user.email,

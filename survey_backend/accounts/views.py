@@ -168,6 +168,9 @@ class LoginView(APIView):
         if not user.check_password(password):
             return Response({"error": "Invalid credentials (password)"}, status=401)
 
+        if not user.userprofile.is_verified:
+            return Response({"error": "Email not verified."}, status=403)
+        
         print("✅ User validated")
 
         # 3. Generate tokens safely

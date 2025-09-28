@@ -7,26 +7,72 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Container from "../../components/Container";
 import GetStarted from "../../components/GetStarted";
+import {
+  FaUserCheck,
+  FaUserShield,
+  FaTools,
+  FaClipboard,
+  FaBan,
+  FaBook,
+  FaExclamationTriangle,
+  FaGavel,
+} from "react-icons/fa";
 
-// ✅ Reusable Info Block Component
-const InfoBlock = ({ title, description, isLast }) => (
+const InfoBlock = ({ title, icon, description, isLast }) => (
   <div
     className="
-      grid lg:grid-cols-[233px_5px_1fr] gap-6 items-start mb-10
+      grid lg:grid-cols-[233px_5px_1fr] gap-6 items-center mb-10
       w-full text-center lg:text-left
     "
   >
-    <div className="text-[#395692] text-2xl font-semibold leading-relaxed">
-      {title}
+    <div className="text-[#395692] text-2xl font-semibold leading-relaxed flex items-center text-left lg:pl-12 relative">
+      <span>{title}</span>
+      <span className="hidden lg:inline absolute text-3xl -left-[5px] animate-slightScale">
+        {icon}
+      </span>
+
+      <style>
+        {`
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @keyframes slightScale {
+      0%   { transform: scale(1); }
+      25%  { transform: scale(1.1); }
+      50%  { transform: scale(0.9); }
+      75%  { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .animate-slightScale {
+      animation: slightScale 3s infinite;
+    }
+  `}
+      </style>
     </div>
-    <div
-      className="
-        hidden lg:block bg-[#F19303] w-[5px] min-h-[76px]
-      "
-    />
-    <p className="text-sm font-normal text-black leading-relaxed text-justify">
-      {description}
-    </p>
+
+    <div className="hidden lg:block bg-[#F19303] w-[5px] min-h-[100px]" />
+
+    <ul className="hidden md:block text-md font-bold text-black leading-relaxed list-disc list-inside text-left">
+      {description.map((point, i) => (
+        <li key={i}>{point}</li>
+      ))}
+    </ul>
+
+    <div className="md:hidden w-full text-md font-bold text-black leading-relaxed text-left">
+      {description.map((point, i) => (
+        <div
+          key={i}
+          className={`py-2 ${
+            i !== description.length - 1 ? "border-b border-gray-500" : ""
+          }`}
+        >
+          {point}
+        </div>
+      ))}
+    </div>
+
     {!isLast && (
       <div className="lg:hidden w-full h-[3px] bg-[#F19303] my-4"></div>
     )}
@@ -40,47 +86,86 @@ function TermsAndConditions() {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  // ✅ All terms content here
   const content = [
     {
       title: "Eligibility",
-      description:
-        "Users must be at least 18 years of age or the age of majority in their jurisdiction. Users are solely responsible for the accuracy and completeness of all information submitted to the Platform.",
+      icon: <FaUserCheck />,
+      description: [
+        "Users must be at least 18 years old or of legal age in their area.",
+        "They are responsible for providing accurate information.",
+        "All submitted info must be complete and truthful.",
+        "Users are accountable for their own data on the Platform.",
+      ],
     },
     {
       title: "Account Responsibilities",
-      description:
-        "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately of any unauthorized use.",
+      icon: <FaUserShield />,
+      description: [
+        "You must keep your account credentials confidential.",
+        "You are responsible for all activities on your account.",
+        "Notify us immediately if there is unauthorized use.",
+        "Ensure your account is secure at all times.",
+      ],
     },
     {
       title: "Service Modifications",
-      description:
-        "Survey Ink reserves the right to modify, suspend, or terminate services at any time, with or without notice, at our sole discretion. We may also update these Terms periodically, and continued use constitutes acceptance of revised Terms.",
+      icon: <FaTools />,
+      description: [
+        "Survey Ink may modify, suspend, or terminate services anytime.",
+        "Notice may or may not be provided.",
+        "We can update Terms periodically.",
+        "Continued use means you accept the revised Terms.",
+      ],
     },
     {
       title: "User Obligations",
-      description:
-        "Participants must provide honest responses and follow the one-survey-per-person rule unless otherwise approved. Researchers are required to uphold ethical data standards and secure all necessary approvals.",
+      icon: <FaClipboard />,
+      description: [
+        "Participants must answer surveys honestly.",
+        "Follow the one-survey-per-person rule unless approved.",
+        "Researchers must maintain ethical standards.",
+        "Secure all necessary approvals for data collection.",
+      ],
     },
     {
       title: "Prohibited Conduct",
-      description:
-        "Users may not engage in fraudulent activities, violate applicable laws, infringe intellectual property rights, or attempt unauthorized access to the Platform. Users must not collect personal information without proper consent.",
+      icon: <FaBan />,
+      description: [
+        "Users cannot engage in fraud or illegal activities.",
+        "Do not infringe on intellectual property rights.",
+        "Unauthorized access to the Platform is forbidden.",
+        "Personal data cannot be collected without consent.",
+      ],
     },
     {
       title: "Intellectual Property",
-      description:
-        "Survey Ink retains all rights to the Platform. Users retain ownership of their content but grant us a license to use such content as necessary to provide our services.",
+      icon: <FaBook />,
+      description: [
+        "Survey Ink owns all rights to the Platform.",
+        "Users retain ownership of their own content.",
+        "We are granted a license to use user content.",
+        "This license is necessary to provide our services.",
+      ],
     },
     {
       title: "Limitation of Liability",
-      description:
-        "To the maximum extent permitted by law, Survey Ink shall not be liable for any indirect, incidental, or consequential damages arising from your use of the platform.",
+      icon: <FaExclamationTriangle />,
+      description: [
+        "Survey Ink is not liable for indirect or incidental damages.",
+        "Consequential damages from platform use are excluded.",
+        "Liability is limited to the maximum extent allowed by law.",
+        "Users accept this limitation when using the Platform.",
+      ],
     },
     {
       title: "Enforcement",
-      description:
-        "Any misuse or violation of these Terms may result in account suspension, termination, or legal action. These Terms are governed by applicable law, and any disputes shall be resolved in courts of competent jurisdiction.",
+      icon: <FaGavel />,
+      description: [
+        "Misuse of the Platform may lead to suspension or termination.",
+        "Legal action may be taken for violations.",
+        "These Terms are governed by applicable law.",
+        "Disputes will be resolved in competent courts.",
+      ],
     },
   ];
 
@@ -143,19 +228,22 @@ function TermsAndConditions() {
           <div
             className="
             bg-[#E4E4E4] shadow-lg font-[Poppins] 
-              max-w-[1000px] p-10 
+              p-10 
               md:mt-[-300px] 
-              w-[90%] lg:w-full mx-auto
+              w-[100%] lg:w-full mx-auto
             "
           >
-            {content.map((item, index) => (
-              <InfoBlock
-                key={index}
-                title={item.title}
-                description={item.description}
-                isLast={index === content.length - 1}
-              />
-            ))}
+            <div>
+              {content.map((item, index) => (
+                <InfoBlock
+                  key={index}
+                  title={item.title}
+                  icon={item.icon}
+                  description={item.description}
+                  isLast={index === content.length - 1}
+                />
+              ))}
+            </div>
           </div>
         </Container>
       </section>

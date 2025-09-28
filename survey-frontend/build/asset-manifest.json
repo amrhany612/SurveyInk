@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.e56ed645.css",
-    "main.js": "/static/js/main.4e1343a0.js",
+    "main.css": "/static/css/main.1c66d584.css",
+    "main.js": "/static/js/main.c0abc72a.js",
     "static/js/488.7e8f63e8.chunk.js": "/static/js/488.7e8f63e8.chunk.js",
+    "static/media/exchange.mp4": "/static/media/exchange.e70b34622f4e5d7134de.mp4",
     "static/media/our_mission_image.svg": "/static/media/our_mission_image.764f6d0311c07bc0c3dd42e64d07d847.svg",
     "static/media/hero_section_video.mp4": "/static/media/hero_section_video.c437e0a3c3fd84eac1d4.mp4",
     "static/media/about_us_image.jpg": "/static/media/about_us_image.2db03647d35bbe133f85.jpg",
     "static/media/B.G.svg": "/static/media/B.G.6501b8c338761d0e1b9048ca7420cdf3.svg",
+    "static/media/survTablet2.jpg": "/static/media/survTablet2.1caf254bcd182e819b4b.jpg",
+    "static/media/exchange1.png": "/static/media/exchange1.95d3fe7ae32773399a7d.png",
     "static/media/Survey Hosting.jpg": "/static/media/Survey Hosting.5f7f093d358319057eee.jpg",
     "static/media/Research Paper Support.jpg": "/static/media/Research Paper Support.8854796e97d2363d0b14.jpg",
+    "static/media/exvhange2.png": "/static/media/exvhange2.baf2859b64746d5f4606.png",
     "static/media/Academic.png": "/static/media/Academic.c2d44dffd59324a2a97c.png",
     "static/media/B.G.png": "/static/media/B.G.3bbf0d59070f953c80dc.png",
     "static/media/Statistical Analysis.jpg": "/static/media/Statistical Analysis.5d5714667a5c533fe652.jpg",
     "static/media/Rectangle.png": "/static/media/Rectangle.cec48a23503cb93df24c.png",
     "static/media/dashboardBg.png": "/static/media/dashboardBg.8567b0e1432571100b57.png",
+    "static/media/survTablet.jpg": "/static/media/survTablet.e155c7c7a2c100df4537.jpg",
     "static/media/TermsBackground.png": "/static/media/TermsBackground.d45dacc5126c4afa1309.png",
     "static/media/privacy_image.png": "/static/media/privacy_image.950ecf4eec4a61b3ed33.png",
     "static/media/login_background.png": "/static/media/login_background.68d19f2242ca5ed01ea4.png",
@@ -23,6 +28,7 @@
     "static/media/mobile.png": "/static/media/mobile.9d81d7d8e33b6ac6fa9d.png",
     "static/media/DollarImage.png": "/static/media/DollarImage.4c6cd6659459be5ad8fb.png",
     "static/media/mobile2.png": "/static/media/mobile2.f4884feac3763a9ef893.png",
+    "static/media/gridiant.svg": "/static/media/gridiant.f3bd061373291437d1849a36c0bc9662.svg",
     "static/media/logo.mp4": "/static/media/logo.783e1045b68ba248d7a6.mp4",
     "static/media/empower.jpg": "/static/media/empower.b2b1045d6ddba056d386.jpg",
     "static/media/ourmission.jpg": "/static/media/ourmission.d53859ada2193ea6368e.jpg",
@@ -55,12 +61,12 @@
     "static/media/Vector 6.svg": "/static/media/Vector 6.205f98fe7ec3ae12e1fe2408abfadb88.svg",
     "static/media/brand asset.svg": "/static/media/brand asset.54d6ec1785d7a5ba155264e00bc7b6af.svg",
     "static/media/logs.svg": "/static/media/logs.eb2da2e4a8e2823899a86628b2f59ddb.svg",
-    "main.e56ed645.css.map": "/static/css/main.e56ed645.css.map",
-    "main.4e1343a0.js.map": "/static/js/main.4e1343a0.js.map",
+    "main.1c66d584.css.map": "/static/css/main.1c66d584.css.map",
+    "main.c0abc72a.js.map": "/static/js/main.c0abc72a.js.map",
     "488.7e8f63e8.chunk.js.map": "/static/js/488.7e8f63e8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e56ed645.css",
-    "static/js/main.4e1343a0.js"
+    "static/css/main.1c66d584.css",
+    "static/js/main.c0abc72a.js"
   ]
 }

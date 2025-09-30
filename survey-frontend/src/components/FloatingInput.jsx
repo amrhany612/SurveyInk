@@ -37,9 +37,6 @@ const FloatingInput = ({ name, value, onChange, type, direction, label }) => {
         width: "100%",
       }}
     >
-      <div className="input-icon" style={styles.icon}>
-        {icon}
-      </div>
       <div style={{ ...styles.inputContainer, width: "100%" }}>
         <input
           name={name}

@@ -48,7 +48,7 @@ const styles = {
     padding: "1rem",
     borderRadius: "5px",
     border: "1px solid var(--primary-color, #395692)",
-    fontSize: "1rem",
+    fontSize: "0.7rem",
     transition: "all 0.3s ease",
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.05)",
     backgroundColor: "transparent",

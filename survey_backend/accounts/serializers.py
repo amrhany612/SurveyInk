@@ -99,7 +99,6 @@ class UserRegistrationSerializer(serializers.Serializer):
             'verification_link': verification_link,
             
         })
-        print("Hany")
         send_mail(
           subject="Verify your email",
           message="Please verify your email.",   # plain text fallback
@@ -107,14 +106,12 @@ class UserRegistrationSerializer(serializers.Serializer):
           recipient_list=[user.email],
          html_message=html_message
         )
-        print("Hany2")
         EmailLog.objects.create(
             recipient=user.email,
             subject="Verification EMail",
             message="New User Added To Your Website",
             status='sent'
         )
-        print("Hany3")
         # Create profile
         for field in ['First_name', 'Last_name', 'Email']:
             validated_data.pop(field, None)

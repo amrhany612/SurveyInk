@@ -1,0 +1,48 @@
+```
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+*.pot
+*.pyc
+
+# Virtualenv
+venv/
+ENV/
+env/
+.venv/
+
+# Django
+*.mo
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+*.lock
+*.json
+
+# Migrations (keep __init__.py if needed)
+**/migrations/*
+!**/migrations/__init__.py
+
+
+
+# VSCode
+.vscode/
+.history/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Environment variables / secrets
+*.env
+.env.local
+.env.production
+.env.development
+```

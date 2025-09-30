@@ -30,7 +30,8 @@ staticfiles/
 **/migrations/*
 !**/migrations/__init__.py
 
-
+survey_backend/logs/
+survey_backend/staticfiles/
 
 # VSCode
 .vscode/
